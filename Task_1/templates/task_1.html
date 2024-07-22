@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generated passwords</title>
+</head>
+<body>
+
+{% if not error %}
+    <div>
+        <p>{</p>
+        <p style="margin-left: 20px">"items": [</p>
+        {% for password in passwords_list %}
+            <p style="margin-left: 40px">"{{ password }}",</p>
+        {% endfor %}
+        <p style="margin-left: 20px">]</p>
+        <p>}</p>
+    </div>
+{% else %}
+    <p>{{ error }}</p>
+{% endif %}
+
+</body>
+</html>
